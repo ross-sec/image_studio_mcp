@@ -6,14 +6,15 @@
 
 A [Model Context Protocol](https://modelcontextprotocol.io) server that lets any MCP client —
 Claude Code, opencode, Claude Desktop, or your own — **generate and edit images in-loop** with
-[Image Studio](https://studio.ross-developers.com/agents/mcp). Results come back **inline** (the
+[Image Studio](https://studio.ross-developers.com). Results come back **inline** (the
 model sees the image) and each PNG is saved to disk.
 
 You need nothing but Node ≥20 and an API key: point your client at `npx @ross_technologies/image_studio_mcp`,
 drop in your key, and go. No clone, no build, no local model — all rendering runs on the hosted Image
 Studio API.
 
-- 🔑 **Get an API key:** https://studio.ross-developers.com/agents/mcp
+- 📦 **npm:** [`@ross_technologies/image_studio_mcp`](https://www.npmjs.com/package/@ross_technologies/image_studio_mcp) · **v1.0.1**
+- 🔑 **Get an API key:** https://studio.ross-developers.com
 - 📖 **Full docs:** https://studio.ross-developers.com/agents/mcp/docs
 
 ## Quick start
@@ -57,7 +58,7 @@ Set via your MCP client's `env` block (above) or a `.env` file. See [.env.exampl
 
 | var | required | default | notes |
 |-----|:---:|---------|-------|
-| `IMAGE_STUDIO_API_KEY` | ✅ | — | Your key from https://studio.ross-developers.com/agents/mcp. Server refuses to start without it. |
+| `IMAGE_STUDIO_API_KEY` | ✅ | — | Your key from https://studio.ross-developers.com. Server refuses to start without it. |
 | `IMAGE_OUTPUT_DIR` | | `<package>/outputs` | where PNGs are saved |
 | `MCP_MAX_WAIT_S` | | `900` | max seconds a tool blocks before returning a job handle |
 
@@ -69,6 +70,21 @@ Set via your MCP client's `env` block (above) or a `.env` file. See [.env.exampl
 npm install -g @ross_technologies/image_studio_mcp
 # then use "command": "image_studio_mcp" (no npx) in your MCP config — the bin is unscoped
 ```
+
+### From GitHub Packages
+
+Also mirrored to GitHub Packages under the `@ross-sec` scope. Point that scope at GitHub's registry, then install:
+
+```bash
+echo "@ross-sec:registry=https://npm.pkg.github.com" >> .npmrc
+npm install @ross-sec/image_studio_mcp
+```
+
+## Releases
+
+- **Latest: [v1.0.1](https://github.com/ross-sec/image_studio_mcp/releases/tag/v1.0.1)** — see [CHANGELOG.md](./CHANGELOG.md).
+- npm: https://www.npmjs.com/package/@ross_technologies/image_studio_mcp
+- GitHub Packages: https://github.com/ross-sec/image_studio_mcp/packages
 
 ## How it works
 

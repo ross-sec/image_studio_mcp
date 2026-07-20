@@ -1,6 +1,6 @@
 {
   "name": "@ross_technologies/image_studio_mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Model Context Protocol server for the Image Studio /v1 API — generate and edit images from any MCP client (Claude Code, opencode, …) over stdio.",
   "type": "module",
   "license": "MIT",

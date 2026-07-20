@@ -68,7 +68,7 @@ async function jobToResult(cfg: Config, job: Job): Promise<ToolResult> {
 
 export function buildServer(cfg: Config): McpServer {
   const client = new ImageStudioClient(cfg);
-  const server = new McpServer({ name: "image_studio_mcp", version: "1.0.0" });
+  const server = new McpServer({ name: "image_studio_mcp", version: "1.0.1" });
 
   server.registerTool(
     "list_models",
