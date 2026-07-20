@@ -1,6 +1,6 @@
 # image_studio_mcp
 
-[![npm version](https://img.shields.io/npm/v/image_studio_mcp.svg)](https://www.npmjs.com/package/image_studio_mcp)
+[![npm version](https://img.shields.io/npm/v/@ross_technologies/image_studio_mcp.svg)](https://www.npmjs.com/package/@ross_technologies/image_studio_mcp)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![node >=20](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](https://nodejs.org)
 
@@ -9,8 +9,8 @@ Claude Code, opencode, Claude Desktop, or your own — **generate and edit image
 [Image Studio](https://studio.ross-developers.com/agents/mcp). Results come back **inline** (the
 model sees the image) and each PNG is saved to disk.
 
-You need nothing but Node ≥20 and an API key: point your client at `npx image_studio_mcp`, drop in
-your key, and go. No clone, no build, no local model — all rendering runs on the hosted Image
+You need nothing but Node ≥20 and an API key: point your client at `npx @ross_technologies/image_studio_mcp`,
+drop in your key, and go. No clone, no build, no local model — all rendering runs on the hosted Image
 Studio API.
 
 - 🔑 **Get an API key:** https://studio.ross-developers.com/agents/mcp
@@ -25,7 +25,7 @@ Add this to your MCP client config (e.g. `.mcp.json`), put in your key, and rest
   "mcpServers": {
     "image-studio": {
       "command": "npx",
-      "args": ["-y", "image_studio_mcp"],
+      "args": ["-y", "@ross_technologies/image_studio_mcp"],
       "env": { "IMAGE_STUDIO_API_KEY": "isk_your_key_here" }
     }
   }
@@ -66,8 +66,8 @@ Set via your MCP client's `env` block (above) or a `.env` file. See [.env.exampl
 `npx` needs no install. To pin it globally instead:
 
 ```bash
-npm install -g image_studio_mcp
-# then use "command": "image_studio_mcp" (no npx) in your MCP config
+npm install -g @ross_technologies/image_studio_mcp
+# then use "command": "image_studio_mcp" (no npx) in your MCP config — the bin is unscoped
 ```
 
 ## How it works
