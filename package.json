@@ -1,0 +1,72 @@
+{
+  "name": "image_studio_mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol server for the Image Studio /v1 API — generate and edit images from any MCP client (Claude Code, opencode, …) over stdio.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Andre Ross <devops.ross@gmail.com> (https://ross-developers.com)",
+  "homepage": "https://studio.ross-developers.com/agents/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ross-sec/image_studio_mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ross-sec/image_studio_mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "modelcontextprotocol",
+    "image-generation",
+    "image-editing",
+    "text-to-image",
+    "diffusion",
+    "image-studio",
+    "ai",
+    "llm-tools",
+    "stdio"
+  ],
+  "bin": {
+    "image_studio_mcp": "dist/stdio.js"
+  },
+  "main": "./dist/server.js",
+  "types": "./dist/server.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/server.d.ts",
+      "default": "./dist/server.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    ".env.example"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "start": "node dist/stdio.js",
+    "dev": "tsx src/stdio.ts",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
